@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/itbeaver/spree_simple_subscribers.svg?branch=3-0-stable)](https://travis-ci.org/itbeaver/spree_simple_subscribers)
+[![Code Climate](https://codeclimate.com/github/itbeaver/spree_simple_subscribers/badges/gpa.svg)](https://codeclimate.com/github/itbeaver/spree_simple_subscribers)
 
 SpreeSimpleSubscribers
 ======================

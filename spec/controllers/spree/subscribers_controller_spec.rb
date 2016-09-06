@@ -1,5 +1,4 @@
 RSpec.describe Spree::SubscribersController, type: :controller do
-
   let(:valid_params) do
     {
       format: :js,
@@ -11,15 +10,15 @@ RSpec.describe Spree::SubscribersController, type: :controller do
 
   context '#create' do
     it 'returns success with valid params' do
-      expect {
+      expect do
         spree_post :create, valid_params
-      }.to change(Spree::Subscriber, :count).by(1)
+      end.to change(Spree::Subscriber, :count).by(1)
     end
 
     it 'raises error with invalid params' do
-      expect {
+      expect do
         spree_post :create, format: :js
-      }.to raise_error ActionController::ParameterMissing
+      end.to raise_error ActionController::ParameterMissing
     end
   end
 end
