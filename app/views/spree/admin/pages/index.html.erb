@@ -1,0 +1,38 @@
+<% content_for :page_title do %>
+  <%= plural_resource_name(Spree::Subscriber) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <%= button_link_to Spree.t(:download, scope: :simple_subscribers), admin_subscriber_download_csv_path, icon: 'down', class: 'btn-primary', id: 'admin_new_page' %>
+<% end %>
+
+<% if @subscribers.any? %>
+  <table class="table" id="listing_pages" data-hook>
+    <colgroup>
+      <col style="width: 40%">
+      <col style="width: 35%">
+      <col style="width: 10%">
+      <col style="width: 15%">
+    </colgroup>
+    <thead>
+      <tr data-hook="admin_pages_index_headers">
+        <th><%= Spree::Subscriber.human_attribute_name(:email) %></th>
+        <th data-hook="admin_pages_index_header_actions" class="actions"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @subscribers.each do |subscriber| %>
+        <tr data-hook="admin_pages_index_rows" class="<%= cycle('odd', 'even') %>" id="<%= dom_id subscriber %>">
+          <td><%= subscriber.email %></td>
+          <td class="actions text-right" data-hook="admin_subscriber_index_row_actions">
+            <%= link_to_delete subscriber, no_text: true %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="alert alert-warning no-objects-found">
+    <%= Spree.t(:no_resource_found, resource: Spree::Subscriber.model_name.human) %>,
+  </div>
+<% end %>
