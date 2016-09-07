@@ -5,8 +5,8 @@ en:
         email: Email
     models:
       spree/subscriber:
-        one: subscriber
-        other: subscribers
+        one: Subscriber
+        other: Subscribers
   spree:
-    static_content:
+    simple_subscribers:
       Download: Download List

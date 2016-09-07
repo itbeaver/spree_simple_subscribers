@@ -1,5 +1,5 @@
 <% if can? :admin, Spree::Subscriber %>
   <ul class="nav nav-sidebar">
-    <%= tab Spree::Subscriber, url: spree.admin_subscribers_url, icon: 'leaf', label: plural_resource_name(Spree::Subscriber) %>
+    <%= tab Spree::Subscriber, url: spree.admin_subscribers_url, icon: 'envelope', label: plural_resource_name(Spree::Subscriber) %>
   </ul>
 <% end %>
