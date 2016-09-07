@@ -18,5 +18,11 @@ RSpec.feature 'Admin Static Content', :js do
       expect(page).to have_text 'successfully removed!'
       expect(page).not_to have_text subscriber.email
     end
+
+    scenario 'can be downloaded' do
+      click_icon :download
+      expect(page.response_headers['Content-Disposition']).to \
+        include('filename="barbara_subscribers.csv"')
+    end
   end
 end

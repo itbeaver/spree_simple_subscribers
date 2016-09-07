@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_simple_subscribers'
-  s.version     = '3.0.11'
+  s.version     = '3.0.12'
   s.summary     = 'Subscribers functionality'
   s.description = s.summary
   s.required_ruby_version = '>= 2.1.0'
@@ -26,7 +26,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'ffaker'
   s.add_development_dependency 'rspec-rails', '~> 3.4'
   s.add_development_dependency 'sass-rails', '~> 5.0.0'
-  s.add_development_dependency 'selenium-webdriver'
   s.add_development_dependency 'simplecov'
   s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'poltergeist', '~> 1.6'
+  s.add_development_dependency 'pry-rails', '>= 0.3.0'
 end

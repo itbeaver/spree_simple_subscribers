@@ -3,7 +3,7 @@
 <% end %>
 
 <% content_for :page_actions do %>
-  <%= button_link_to Spree.t(:download, scope: :simple_subscribers), admin_subscriber_download_csv_path, icon: 'down', class: 'btn-primary', id: 'admin_new_page' %>
+  <%= button_link_to Spree.t(:download, scope: :simple_subscribers), download_admin_subscribers_path, icon: 'download', class: 'btn-primary', id: 'admin_download_subscribers' %>
 <% end %>
 
 <% if @subscribers.any? %>
